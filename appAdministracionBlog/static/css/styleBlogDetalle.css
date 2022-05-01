@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Caudex&display=swap");
+
+* {
+    font-family: "Noto", serif;  
+}
+
+.blog-details h2{
+    font-size: 35px;
+    /* text-shadow: 2px 2px 2px #A09491,
+  2px 2px 2px #A09491; */
+    text-align: center;
+
+
+}
+
+.blog-details p{
+    font-size: 25px;
+    text-shadow: 0px 0px 0px #A09491,
+  2px 2px 2px #A09491;
+    
+}
+
+.blog-details h3{
+    font-size: 30px;
+}

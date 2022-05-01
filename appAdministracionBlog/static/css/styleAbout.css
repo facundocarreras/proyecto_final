@@ -1,0 +1,70 @@
+
+
+.about{
+	color: #151313;
+	padding-top: 100px;
+	padding-bottom: 30px;
+}
+.about h1 {
+	padding: 10px 0;
+	margin-bottom: 20px;
+    font-size: 25px;
+}
+.about h2 {
+	font-size: 20px;
+    opacity: .8;
+	padding-top: 50px;
+    
+}
+.about span {
+	display: block;
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	margin:auto;
+	border-radius:50%;  
+	font-size: 60px;
+	color: #0a0a0a;
+	opacity: 0.7;
+	background-color: #4C0822;
+	border: 2px solid #4C0822;
+    -webkit-transition:all .5s ease;
+    -moz-transition:all .5s ease;
+    -o-transition:all .5s ease;
+    transition:all .5s ease;
+
+}
+.about-item:hover span{
+	opacity: 1;	
+	border: 2px solid #CC0039;
+	font-size: 100px;
+	-webkit-transform: scale(1.1,1.1) rotate(360deg) ;
+	-moz-transform: scale(1.1,1.1) rotate(360deg) ;
+	-o-transform: scale(1.1,1.1) rotate(360deg) ;
+	transform: scale(1.1,1.1) rotate(360deg) ;
+}
+.about-item:hover h2{
+	opacity: 1;
+	-webkit-transform: scale(1.1,1.1)  ;
+	-moz-transform: scale(1.1,1.1)  ;
+	-o-transform: scale(1.1,1.1)  ;
+	transform: scale(1.1,1.1) ;
+}
+.about .lead{
+	color: #CC0039;
+	font-size: 18px;
+	font-weight: bold;
+	padding-top: 50px;
+}
+
+.about-item img{
+	/*arredonda a imagem*/
+	border-radius: 100%;
+	/*deixa a imagem quadrada*/
+	height: 200px;
+	width: 200px;
+	/*nao deixa que a imagem fique esticada*/
+	object-fit: cover;
+	/*deixa a imagem centralizada*/
+	background-position: center center;
+}

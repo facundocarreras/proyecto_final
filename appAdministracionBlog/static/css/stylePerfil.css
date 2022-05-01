@@ -1,0 +1,24 @@
+
+h1
+{
+   text-transform:uppercase;
+    font: bold 20px/45px Helvetica, Verdana, sans-serif;
+    text-align: center;
+}
+label 
+{
+    display: block;
+}
+
+#imagenperfil{
+
+    
+    width: 80px;
+    height: 80px;
+    
+}
+
+.picture{
+    text-align: center;
+    display: block;
+}

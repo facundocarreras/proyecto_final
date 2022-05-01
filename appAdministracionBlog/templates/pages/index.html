@@ -1,0 +1,51 @@
+{% extends './../masterPage.html' %}
+{% block contenido %}
+
+<div class="miCarousel2">
+    <input type="radio" name="position"  />
+    <input type="radio" name="position" />
+    <input type="radio" name="position" checked />
+    <input type="radio" name="position" />
+    <input type="radio" name="position" />
+    <main id="carousel">
+    {% load static %}
+    <div class="item" style="background-image:url({% static 'img/aleti1.jpg' %})"></div>
+    <div class="item" style="background-image:url({% static 'img/barcelona1.jpg' %})"></div>
+    <div class="item" style="background-image:url({% static 'img/chelsea1.jpg' %})"></div>
+    <div class="item" style="background-image:url({% static 'img/liverpool1.jpg' %})"></div>
+    <div class="item" style="background-image:url({% static 'img/holanda1.jpg' %})"></div>
+    <main>
+</div>           
+
+<div class="container">
+<div class="gallery">
+
+    <div class="gallery-item">
+        <img class="gallery-image" src="{% static 'img/woman1.jpg' %}" alt="person writing in a notebook beside by an iPad, laptop, printed photos, spectacles, and a cup of coffee on a saucer">
+    </div>
+
+    <div class="gallery-item">
+        <img class="gallery-image" src="{% static 'img/basket1.jpg' %}" alt="sunset behind San Francisco city skyline">
+    </div>
+
+    <div class="gallery-item">
+        <img class="gallery-image" src="{% static 'img/woman3.jpg' %}" alt="people holding umbrellas on a busy street at night lit by street lights and illuminated signs in Tokyo, Japan">
+    </div>
+
+    <div class="gallery-item">
+        <img class="gallery-image" src="{% static 'img/corredor1.jpg' %}" alt="car interior from central back seat position showing driver and blurred view through windscreen of a busy road at night">
+    </div>
+
+    <div class="gallery-item">
+        <img class="gallery-image" src="{% static 'img/woman2.jpg' %}" alt="back view of woman wearing a backpack and beanie waiting to cross the road on a busy street at night in New York City, USA">
+    </div>
+
+    <div class="gallery-item">
+        <img class="gallery-image" src="{% static 'img/gym1.jpg' %}" alt="man wearing a black jacket, white shirt, blue jeans, and brown boots, playing a white electric guitar while sitting on an amp">
+    </div>
+    
+</div>
+
+</div>
+
+{% endblock  %} 

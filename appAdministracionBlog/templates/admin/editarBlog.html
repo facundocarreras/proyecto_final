@@ -1,0 +1,114 @@
+{% extends './../masterPage.html' %}
+{% block contenido %}
+
+
+<head>
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'bootstrap-5.1.3-dist/css/bootstrap.min.css' %}">
+<script src="{% static 'bootstrap-5.1.3-dist/js/bootstrap.min.js' %}" ></script>
+<link rel="stylesheet" href="{% static 'css/styleMaster.css' %}">
+<link rel="stylesheet" href="{% static 'css/styleAdminBlog.css' %}">
+</head>
+
+<body>
+    <br><br>
+    <div class="container">
+        
+        <div class="row">
+            <!-- Registro de blogs -->
+            <div class="col-md-6">
+                <form action = '/admin/edicionBlog/' method = 'POST' enctype = 'multipart/form-data'> 
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text"  id="idBlog" name = 'idBlog' hidden value = {{blog.pk}}>
+                        <label for="detalle_titulo">Titulo</label>
+                      <input type="text" class="form-control" id="inputTitulo" name = 'detalle_titulo' value = '{{blog.titulo}}'>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <img id="imgMuestra" src= '{{blog.imagen}}' style="width: 150px; height:150px;border:1px block black; border-radius: 15% ">                         
+                        </div>
+                        <div class="form-group col-md-7">
+                          <label for="detalle_imagen">Seleccionar Imagen:</label>
+                          <input type="file" onchange="cambiarImagen();" class="form-control" id="inputImagen" name = 'detalle_imagen'>
+                          <input type="text"  id="inputImagenstr" name = 'detalle_imagen_str' hidden value = '{{blog.imagen}}'>
+                        </div>
+                      </div>
+
+                    <div class="form-group">
+                        <label for="detalle_introduccion"> Introduccion </label>
+                        <textarea class="form-control" id="inputIntroduccion" rows="3" name = 'detalle_introduccion'> {{blog.introduccion}} </textarea>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="detalle_contenido">Contenido</label>
+                        <textarea name="detalle_contenido" id="editorContenido" rows="4" cols="50">
+                            {{blog.contenido}}
+                        </textarea>
+                      </div>
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Guardar">
+                  </form>   
+            </div>
+            <!-- Blogs Registrados -->
+            <div class="col-md-6">
+                <div class="row" style="margin-top:20px">
+                    {% for item in blogs %}
+                    <div class="col-lg-12">
+                        <div class="card card-margin">
+                            <div class="card-body pt-0">
+                                <div class="widget-49">
+                                    <div class="widget-49-title-wrapper">
+                                        <div class="widget-49-date-primary">
+                                            <img style="width: 100%" src="{{item.imagen}}">
+                                        </div>
+                                        <div class="widget-49-meeting-info">
+                                            <span class="widget-49-pro-title"> {{item.titulo}}</span>
+                                            <span class="widget-49-meeting-time">{{item.fecha}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="widget-49-meeting-action">
+                                        <a href="/admin/mostrarEdicionBlog/{{item.pk}}" class="btn btn-sm btn-flash-border-primary">Editar</a>
+                                        <a href="/admin/eliminarBlog/{{item.pk}}" class="btn btn-sm btn-flash-border-primary">Eliminar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+    </div>    
+  
+
+    <script>
+        CKEDITOR.replace( 'editorContenido' );
+
+        function cambiarImagen(){
+            var archivo = document.getElementById("inputImagen");
+            var archivostr = document.getElementById("inputImagenstr");
+
+            var fReader = new FileReader();
+                fReader.readAsDataURL(archivo.files[0]);
+               
+                fReader.onloadend = function(event){
+                    var imagen = document.getElementById("imgMuestra");
+                    imagen.src = event.target.result;
+                    archivostr.value=fReader.result;
+                    console.log(fReader.result)
+                   
+                }
+
+        }
+    </script>
+
+</body>
+
+
+
+
+{% endblock  %} 
