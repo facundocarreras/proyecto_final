@@ -15,7 +15,7 @@
 <body>
 
     <div class="main">
-        <h1>Responsive Card Grid Layout</h1>
+        <h1>Caju Indumentaria tu blog FITNESS</h1>
         <ul class="cards">
         {% for item in blogs%}
           <li class="cards_item">
@@ -23,6 +23,7 @@
               <div class="card_image"><img src="{{item.imagen}}"></div>
               <div class="card_content">
                 <h2 class="card_title">{{item.titulo}}</h2>
+                <br>
                 <p class="card_text">{{item.introduccion}}</p>
                 <a class="btn card_btn" href= "/detalleBlog/{{item.id}}">Ver Mas</a>
               </div>
@@ -32,7 +33,7 @@
         </ul>
       </div>
       
-      <h3 class="made_by">Made with ♡</h3>
+      <h3 class="made_by">Tu mejor Blog de Indumentaria!</h3>
 
 
 </body>

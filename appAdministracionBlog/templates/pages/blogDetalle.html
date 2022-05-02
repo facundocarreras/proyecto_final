@@ -18,12 +18,16 @@
         <div class='col-md-12'>
         <div class='blog-details'>
         <h2> {{blog.titulo}} </h2>
-        <img src="{% static 'img/Blog2.jpg' %}" alt="Blog" style='width: 100%'>
+        <p>
+           Autor : {{blog.usuario_id.name}}
+        </p>
+        <img src="{{blog.imagen}}" alt="Blog" style='width: 100%'>
+        <p>
+             Fecha : {{blog.fecha}}
+        </p>     
+        <br>
         <p>
             {{blog.introduccion}}
-        </p>
-        <p>
-            {{blog.usuario_id.name}}
         </p>
         <br>
         <p>

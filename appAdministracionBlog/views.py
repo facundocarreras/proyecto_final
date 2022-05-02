@@ -3,12 +3,7 @@ import base64
 from .models import Usuario, Blog, Contacto
 import datetime
 
-    # TODA ACCION PARTE DE UNA PETICION (INGRESO DE DATOS)
-    # VISUALIZAR TODO (SELECT * FROM TABLA -> SELECCIONA TODOS LOS ELEMENTOS DE UNA TABLA) ((NO RECIBE PARAMETROS))
-    # VISUALIZAR ELEMENTO O CIERTOS ELEMENTOS (SELECT * FROM  TABLA WHERE codicion = value)  ((RECIBE PARAMETROS value))
-    # REGISTRO (RECIBE TODOS LOS PARAMETROS PARA REGISTRO)
-    # ACTUALIZACION (RECIBE TODOS LOS PARAMETROS PARA ACTUALIZAR)
-    # ELIMINACION (RECIBE EL PARAMETRO DEL REGISTRO A ELIMINAR) 
+
 
 # Paginas de Admin
 
@@ -48,20 +43,16 @@ def registrarUsuario(request):
     return render(request, 'pages/registro.html')
 
 def ingresarUsuario(request):
-    # RECEPCION DE DATOS - INGRESO DE DATOS
-    # PROCESO (BUSQUEDA DE DATOS - ACCION EN LA BASE DATOS (ELIMINAR, GUARDAR, EDITAR))
-    # RETORNA EL RESULTADO ESPERADO
-
-    # RECEPCION DE DATOS - INGRESO DE DATOS
+   
     usuario_ingresado = request.POST['usuarioLogin']
     pass_ingresado = request.POST['passLogin']
 
-    # PROCESO (BUSQUEDA DE DATOS - ACCION EN LA BASE DATOS (ELIMINAR, GUARDAR, EDITAR))
+   
     itemUsuario = Usuario.objects.filter(name = usuario_ingresado)[0]
     if itemUsuario.password != pass_ingresado:
         itemUsuario = None
 
-    # SELECT * FROM Usuario WHERE name = usuario_ingresado and password = pass_ingresado
+   
 
     if (itemUsuario is None):
         
@@ -75,7 +66,7 @@ def ingresarUsuario(request):
         return render(request, 'pages/index.html')
         
 
-    # RETORNA EL RESULTADO ESPERADO
+  
     return render(request, 'pages/index.html')
     
 def cerrarSession(request):
