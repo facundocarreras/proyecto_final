@@ -129,7 +129,7 @@ def enviarContacto(request):
     mensaje = mensaje, usuario = usuario)
 
     nuevoMensaje.save()
-    return render(request, 'pages/sendMessage.html')
+    return render(request, 'pages/index.html')
 
 
 # Paginas Principales
